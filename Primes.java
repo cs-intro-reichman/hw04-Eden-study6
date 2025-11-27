@@ -24,9 +24,10 @@ public class Primes {
     System.out.println("Prime numbers up to " + n + ":");
 
     int count = 0;
+    
     for (int i = 2; i <= n; i++) {
         if (isprime[i]) {
-            System.out.println(i); // כל ראשוני בשורה חדשה
+            System.out.println(i); 
             count++;
         }
     }

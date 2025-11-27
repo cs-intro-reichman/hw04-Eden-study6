@@ -32,22 +32,11 @@ public class MyString {
         
         String newstr = lowerCase(str1);
         String newstr2 = lowerCase(str2);
-        if(newstr.length()>= newstr2.length())
-        {
-            int place = newstr.indexOf(newstr2.charAt(0));
-            int lastplace = newstr.indexOf(newstr2.charAt((str2.length()-1)));
-            if(place ==-1||lastplace ==-1)
-            {return false;}
-            for(int i=place; i< lastplace ;i++)
-            {
-                if(newstr.charAt(i)!=newstr2.charAt(i-place))
-                {
-                    return false;
-                }
-            }
-             return true;
-
+        
+        if(newstr.isEmpty() || newstr2.isEmpty()) {
+            return newstr2.isEmpty();
         }
-        return false;
+        
+        return newstr.contains(newstr2);
     }
 }
