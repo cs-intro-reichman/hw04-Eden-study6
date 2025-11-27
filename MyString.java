@@ -29,28 +29,22 @@ public class MyString {
         return true;
     }
 
-    String newstr  = lowerCase(str1);
-    String newstr2 = lowerCase(str2);
-
-    if (newstr.length() < newstr2.length()) {
+    if (str1.length() < str2.length()) {
         return false;
     }
 
-    if (newstr.length() >= newstr2.length()) {
-        for (int start = 0; start <= newstr.length() - newstr2.length(); start++) {
+    for (int start = 0; start <= str1.length() - str2.length(); start++) {
+        boolean match = true;
 
-            boolean match = true;
-
-            for (int i = 0; i < newstr2.length(); i++) {
-                if (newstr.charAt(start + i) != newstr2.charAt(i)) {
-                    match = false;
-                    break;
-                }
+        for (int i = 0; i < str2.length(); i++) {
+            if (str1.charAt(start + i) != str2.charAt(i)) {
+                match = false;
+                break;
             }
+        }
 
-            if (match) {
-                return true; 
-            }
+        if (match) {
+            return true; 
         }
     }
 
