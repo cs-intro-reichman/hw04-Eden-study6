@@ -25,18 +25,37 @@ public class MyString {
 
     /** If str1 contains str2, returns true; otherwise returns false. */
     public static boolean contains(String str1, String str2) {
-        // Replace the following statement with your code
-        if (str2.isEmpty()) {
-            return true;  
-        }
-        
-        String newstr = lowerCase(str1);
-        String newstr2 = lowerCase(str2);
-        
-        if(newstr.isEmpty() || newstr2.isEmpty()) {
-            return newstr2.isEmpty();
-        }
-        
-        return newstr.contains(newstr2);
+    if (str2.isEmpty()) {
+        return true;
     }
+
+    String newstr  = lowerCase(str1);
+    String newstr2 = lowerCase(str2);
+
+    if (newstr.length() < newstr2.length()) {
+        return false;
+    }
+
+    if (newstr.length() >= newstr2.length()) {
+        for (int start = 0; start <= newstr.length() - newstr2.length(); start++) {
+
+            boolean match = true;
+
+            for (int i = 0; i < newstr2.length(); i++) {
+                if (newstr.charAt(start + i) != newstr2.charAt(i)) {
+                    match = false;
+                    break;
+                }
+            }
+
+            if (match) {
+                return true; 
+            }
+        }
+    }
+
+    return false;
+}
+
+
 }
